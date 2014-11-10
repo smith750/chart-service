@@ -1,0 +1,3094 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+
+	<script type="text/javascript">var jsContextPath = "/kfs-reg";</script>
+	<title>KFS :: Lookup</title>
+	
+
+			<link href="/kfs-reg/kr/css/kuali.css"
+				rel="stylesheet" type="text/css" />
+
+
+
+			<link href="/kfs-reg/kr/scripts/jscalendar-1.0/calendar-win2k-1.css"
+				rel="stylesheet" type="text/css" />
+
+
+	
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/krad/plugins/jquery/jquery-1.6.3.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/krad/plugins/cookie/jquery.cookie.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/core.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/dhtml.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/my_common.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/jscalendar-1.0/calendar.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/jscalendar-1.0/lang/calendar-en.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/jscalendar-1.0/calendar-setup.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/dwr/engine.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/dwr/util.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/dwr/interface/PersonService.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/kr/scripts/objectInfo.js"></script>
+
+
+
+			<script language="JavaScript" type="text/javascript"
+				src="/kfs-reg/scripts/rice-overrides.js"></script>
+
+
+
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+</script>
+
+    
+    
+      
+
+      <!-- allow for custom lookup calls -->
+      <script language="JavaScript" type="text/javascript" src="/kfs-reg/kr/scripts/lookup.js"></script>
+
+    
+    
+  
+</head>
+
+	
+		<body onload="placeFocus();
+		
+			
+				
+			
+		
+		">
+    <div id="view_div">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+			
+				<div class="lookupcreatenew">
+					<a title="Create a new record" href="maintenance.do?businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&methodToCall=start"><img src="images/tinybutton-createnew.gif" alt="create new" width="70" height="15"/></a>   
+				</div>
+		
+		
+			
+			
+				
+			
+		
+
+    
+	
+
+
+
+
+
+<form name="KualiForm" id="kualiForm" method="post" action="/kfs-reg/kr/lookup.do" enctype="" onsubmit="return hasFormAlreadyBeenSubmitted();">
+
+	
+	
+	
+
+
+<!-- DOCUMENT INFO HEADER BOX -->
+	
+
+
+
+	
+		
+		
+	
+	
+
+					
+
+	<SCRIPT type="text/javascript">
+      var kualiForm = document.forms['KualiForm'];
+      var kualiElements = kualiForm.elements;
+    </SCRIPT>
+    <script type="text/javascript" src="/kfs-reg/dwr/interface/DocumentTypeService.js"></script>
+
+	
+	<div class="headerarea-small" id="headerarea-small">
+		<h1>Chart Lookup 
+			
+			
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://reg.kfs.kuali.org/kfs-reg/kr/help.do?methodToCall=getLookupHelpText&amp;lookupBusinessObjectClassName=org.kuali.kfs.coa.businessobject.Chart" tabindex="-1" target="helpWindow" title="[Help]lookup help">
+<img src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/my_cp_inf.gif" alt="[Help]lookup help" hspace=5 border=0  align="middle"></a>
+			
+		</h1>
+	</div>
+	
+	
+	
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="image" class="tinybutton" name="methodToCall.search" src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/pixel_clear.gif" width="0" height="0" border="0"/>
+
+	  
+
+	<input type="hidden" name="backLocation" value="http://reg.kfs.kuali.org/kfs-reg/portal.do">
+	<input type="hidden" name="formKey" value="88888888">
+	<input type="hidden" name="lookupableImplServiceName" value="securityLookupable">
+	<input type="hidden" name="businessObjectClassName" value="org.kuali.kfs.coa.businessobject.Chart">
+	<input type="hidden" name="conversionFields" value="">
+	<input type="hidden" name="hideReturnLink" value="Yes">
+	<input type="hidden" name="suppressActions" value="No">
+	<input type="hidden" name="multipleValues" value="No">
+	<input type="hidden" name="lookupAnchor" value="">
+	<input type="hidden" name="readOnlyFields" value="">
+	<input type="hidden" name="referencesToRefresh" value="">
+	<input type="hidden" name="hasReturnableRow" value="Yes">
+	<input type="hidden" name="docNum" value="">
+	<input type="hidden" name="showMaintenanceLinks" value="Yes">
+	<input type="hidden" name="headerBarEnabled" value="Yes">
+    <input type="hidden" name="fieldNameToFocusOnAfterSubmit" value="">
+
+
+	
+	
+		
+	
+	<div class="right">
+		<div class="excol">
+		* required field
+		</div>
+	</div>
+    <div class="msg-excol">
+      <div class="left-errmsg">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  </div>
+    </div>
+    <br/>
+    
+
+	<table width="100%">
+	  
+		<tr>
+			<td width="1%"><img src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/pixel_clear.gif" alt="" width="20"
+				height="20"></td>
+			<td>
+
+			<div id="lookup" align="center"><br />
+			<br />
+			<table align="center" cellpadding="0" cellspacing="0" class="datatable-100">
+				
+				
+				
+				
+				
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+<!-- maintenanceViewMode = lookup, KualiForm.methodToCall = search -->
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+	
+		
+		<tr>
+	
+
+        
+            
+            
+
+            
+            
+
+            
+            
+    
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+            
+            
+            
+
+            
+
+            
+                
+
+            
+            
+            
+            
+            
+            
+            
+          
+
+            
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+	<th class="grid" style="width:50.0%;" align="right">
+	
+<label id="chartOfAccountsCode.label" for="chartOfAccountsCode">
+
+    	
+		
+
+		
+    	
+			
+        	
+				
+        	
+				Chart Code:
+            	
+			
+            
+			
+            
+		
+
+    	
+    	</label>
+    	
+    	
+	</th>
+    
+
+
+                    <td class="grid" style="width:50.0%;">
+
+                        
+
+                            
+
+                            
+                                
+                                <input type="text" name='chartOfAccountsCode'
+                                    id='chartOfAccountsCode'
+                                    value=''
+                                    size='2'
+                                    maxlength='100'
+                                    style=""  
+                                    class="" tabindex="0"/>
+
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+	
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+                        
+
+                    </td>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+            
+
+            
+            
+        
+    </tr>
+
+
+    
+
+	
+		
+		<tr>
+	
+
+        
+            
+            
+
+            
+            
+
+            
+            
+    
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+            
+            
+            
+
+            
+
+            
+                
+
+            
+            
+            
+            
+            
+            
+            
+          
+
+            
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+	<th class="grid" style="width:50.0%;" align="right">
+	
+<label id="finChartOfAccountDescription.label" for="finChartOfAccountDescription">
+
+    	
+		
+
+		
+    	
+			
+        	
+				
+        	
+				Chart Description:
+            	
+			
+            
+			
+            
+		
+
+    	
+    	</label>
+    	
+    	
+	</th>
+    
+
+
+                    <td class="grid" style="width:50.0%;">
+
+                        
+
+                            
+
+                            
+                                
+                                <input type="text" name='finChartOfAccountDescription'
+                                    id='finChartOfAccountDescription'
+                                    value=''
+                                    size='40'
+                                    maxlength='100'
+                                    style=""  
+                                    class="" tabindex="0"/>
+
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+	
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+                        
+
+                    </td>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+            
+
+            
+            
+        
+    </tr>
+
+
+    
+
+	
+		
+		<tr>
+	
+
+        
+            
+            
+
+            
+            
+
+            
+            
+    
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+            
+            
+            
+
+            
+
+            
+                
+
+            
+            
+            
+            
+            
+            
+            
+          
+
+            
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+	<th class="grid" style="width:50.0%;" align="right">
+	
+<label id="active.label" for="active">
+
+    	
+		
+
+		
+    	
+			
+        	
+				
+        	
+				Chart Active Indicator:
+            	
+			
+            
+			
+            
+		
+
+    	
+    	</label>
+    	
+    	
+	</th>
+    
+
+
+                    <td class="grid" style="width:50.0%;">
+
+                        
+                            
+
+                            
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <input type="radio"
+        checked="checked"
+        name='active'
+        id='activeYes'
+        value='Y'
+		title='Chart Active Indicator - Yes'
+        onblur="" onchange="" tabIndex="0"/>
+    <label for='activeYes'>Yes</label>
+  
+  
+  
+  
+
+  
+    <input type="radio"
+        
+        name='active'
+        id='activeNo'
+        value='N'
+		title='Chart Active Indicator - No'
+        onblur="" onchange="" tabIndex="3"/>
+    <label for='activeNo'>No</label>
+  
+  
+  
+  
+
+  
+    <input type="radio"
+        
+        name='active'
+        id='activeBoth'
+        value=''
+		title='Chart Active Indicator - Both'
+        onblur="" onchange="" tabIndex="4"/>
+    <label for='activeBoth'>Both</label>
+  
+  
+  
+  
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+	
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                        
+                    </td>
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+            
+
+            
+            
+        
+    </tr>
+
+
+    
+
+	
+		
+		<tr>
+	
+
+        
+            
+            
+
+            
+            
+
+            
+            
+    
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+            
+            
+            
+
+            
+
+            
+                
+
+            
+            
+            
+            
+            
+            
+            
+          
+
+            
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+	<th class="grid" style="width:50.0%;" align="right">
+	
+<label id="financialCashObjectCode.label" for="financialCashObjectCode">
+
+    	
+		
+
+		
+    	
+			
+        	
+				
+        	
+				Cash Object Code:
+            	
+			
+            
+			
+            
+		
+
+    	
+    	</label>
+    	
+    	
+	</th>
+    
+
+
+                    <td class="grid" style="width:50.0%;">
+
+                        
+
+                            
+
+                            
+                                
+                                <input type="text" name='financialCashObjectCode'
+                                    id='financialCashObjectCode'
+                                    value=''
+                                    size='4'
+                                    maxlength='100'
+                                    style=""  
+                                    class="" tabindex="0"/>
+
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+	
+    
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+  
+  
+    
+  
+
+
+
+ 
+<input type="image" tabindex="1000000" name="methodToCall.performLookup.(!!org.kuali.kfs.coa.businessobject.ObjectCodeCurrent!!).(((chartOfAccountsCode:chartOfAccountsCode,financialObjectCode:financialCashObjectCode))).((`chartOfAccountsCode:chartOfAccountsCode,financialCashObjectCode:financialObjectCode`)).((<>)).(([])).((**)).((^^)).((&&)).((//)).((~~)).(::::;http://reg.kfs.kuali.org/kfs-reg/kr/lookup.do;::::).anchor"
+   src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/searchicon.gif" border="0" class="tinybutton" valign="middle" alt="Search Cash Object Code" title="Search Cash Object Code" />
+
+                
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+                        
+
+                    </td>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+            
+
+            
+            
+        
+    </tr>
+
+
+    
+
+	
+		
+		<tr>
+	
+
+        
+            
+            
+
+            
+            
+
+            
+            
+    
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+            
+            
+            
+
+            
+
+            
+                
+
+            
+            
+            
+            
+            
+            
+            
+          
+
+            
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+	<th class="grid" style="width:50.0%;" align="right">
+	
+<label id="finAccountsPayableObjectCode.label" for="finAccountsPayableObjectCode">
+
+    	
+		
+
+		
+    	
+			
+        	
+				
+        	
+				Accounts Payable Object Code:
+            	
+			
+            
+			
+            
+		
+
+    	
+    	</label>
+    	
+    	
+	</th>
+    
+
+
+                    <td class="grid" style="width:50.0%;">
+
+                        
+
+                            
+
+                            
+                                
+                                <input type="text" name='finAccountsPayableObjectCode'
+                                    id='finAccountsPayableObjectCode'
+                                    value=''
+                                    size='4'
+                                    maxlength='100'
+                                    style=""  
+                                    class="" tabindex="0"/>
+
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+	
+    
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+  
+  
+    
+  
+
+
+
+ 
+<input type="image" tabindex="1000001" name="methodToCall.performLookup.(!!org.kuali.kfs.coa.businessobject.ObjectCodeCurrent!!).(((financialObjectCode:finAccountsPayableObjectCode,chartOfAccountsCode:chartOfAccountsCode))).((`finAccountsPayableObjectCode:financialObjectCode,chartOfAccountsCode:chartOfAccountsCode`)).((<>)).(([])).((**)).((^^)).((&&)).((//)).((~~)).(::::;http://reg.kfs.kuali.org/kfs-reg/kr/lookup.do;::::).anchor"
+   src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/searchicon.gif" border="0" class="tinybutton" valign="middle" alt="Search Accounts Payable Object Code" title="Search Accounts Payable Object Code" />
+
+                
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+                        
+
+                    </td>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+            
+
+            
+            
+        
+    </tr>
+
+
+
+				<tr align="center">
+					<td height="30" colspan="2"  class="infoline">
+					
+					
+					  <input type="image" name="methodToCall.search" src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/buttonsmall_search.gif" border="0" value="search" class="tinybutton" title="search" alt="search"> 
+					  <input type="image" name="methodToCall.clearValues" src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/buttonsmall_clear.gif" border="0" value="clearValues" class="tinybutton" title="clear" alt="clear"> 
+						
+					
+					
+						<!-- KULRICE-8092: Enter key won't return values in Parameter Component in IE-->
+						<input name="" type="t" value="" style="display:none"/>
+						
+						<a
+							href='http://reg.kfs.kuali.org/kfs-reg/portal.do?methodToCall=refresh&amp;docFormKey=88888888&amp;anchor=&amp;docNum='  title="cancel"><img
+							src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/buttonsmall_cancel.gif" class="tinybutton" alt="cancel" title="cancel"
+							border="0" /></a>
+					
+					
+					<!-- Optional extra buttons -->
+					
+					
+					</td>
+				</tr>
+			  
+			</table>
+			</div>
+
+			<br>
+			<br>
+
+			
+			
+			    
+			    
+				<p><span class="pagebanner">13 items retrieved, displaying all items.</span><span class="pagelinks"></span></p>
+<table id="row" cellpadding="0" class="datatable-100" cellspacing="0">
+<thead>
+<tr>
+<th>Actions</th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=1&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Chart Code</a></th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=2&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Chart Description</a></th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=3&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Chart Active Indicator</a></th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=4&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Cash Object Code</a></th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=5&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Accounts Payable Object Code</a></th>
+<th class="sortable">
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;d-16544-s=6&amp;chartOfAccountsCode=&amp;d-16544-o=2&amp;d-16544-p=1&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription=">Chart Manager Name</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=BA " href="maintenance.do?chartOfAccountsCode=BA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=BA " href="maintenance.do?chartOfAccountsCode=BA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=BA ">BA</a>
+</td>
+<td class="infocell">BLOOMINGTON AUX test</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=BA Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=BA Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=2168808105&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=2168808105 ">RUFFNER, ROMEO K</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=BL " href="maintenance.do?chartOfAccountsCode=BL&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=BL " href="maintenance.do?chartOfAccountsCode=BL&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BL&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=BL ">BL</a>
+</td>
+<td class="infocell">BLOOMINGTON</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BL&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=BL Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=BL&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=BL Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=1872708343&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=1872708343 ">SWINSON, CHARLEY H</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=EA " href="maintenance.do?chartOfAccountsCode=EA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=EA " href="maintenance.do?chartOfAccountsCode=EA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=EA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=EA ">EA</a>
+</td>
+<td class="infocell">EAST</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=EA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=EA Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=EA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=EA Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=2868007063&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=2868007063 ">SHUBERT, HERIBERTO R</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=FW " href="maintenance.do?chartOfAccountsCode=FW&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=FW " href="maintenance.do?chartOfAccountsCode=FW&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=FW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=FW ">FW</a>
+</td>
+<td class="infocell">FORT WAYNE</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=FW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=FW Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=FW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=FW Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=1271304676&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=1271304676 ">BRAZIL, WELDON B</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=HO " href="maintenance.do?chartOfAccountsCode=HO&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=HO " href="maintenance.do?chartOfAccountsCode=HO&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=HO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=HO ">HO</a>
+</td>
+<td class="infocell">HOSPITALS</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=HO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=HO Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=HO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=HO Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=3771303577&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=3771303577 ">GINN, RANDI A</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=IA " href="maintenance.do?chartOfAccountsCode=IA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=IA " href="maintenance.do?chartOfAccountsCode=IA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=IA ">IA</a>
+</td>
+<td class="infocell">INDI AUXILIARY</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IA Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IA Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=6269308135&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=6269308135 ">HAIGH, SYBIL Z</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=IN " href="maintenance.do?chartOfAccountsCode=IN&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=IN " href="maintenance.do?chartOfAccountsCode=IN&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IN&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=IN ">IN</a>
+</td>
+<td class="infocell">INDIANAPOLIS</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IN&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IN Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IN&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IN Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=3771303577&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=3771303577 ">GINN, RANDI A</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=IU " href="maintenance.do?chartOfAccountsCode=IU&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=IU " href="maintenance.do?chartOfAccountsCode=IU&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IU&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=IU ">IU</a>
+</td>
+<td class="infocell">INDIANA UNIV</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IU&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IU Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=IU&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=IU Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=1739701101&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=1739701101 ">GODFREY, KIM G</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=KO " href="maintenance.do?chartOfAccountsCode=KO&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=KO " href="maintenance.do?chartOfAccountsCode=KO&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=KO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=KO ">KO</a>
+</td>
+<td class="infocell">KOKOMO</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=KO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=KO Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=KO&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=KO Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=2615105455&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=2615105455 ">CHAISSON, OSCAR P</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=NW " href="maintenance.do?chartOfAccountsCode=NW&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=NW " href="maintenance.do?chartOfAccountsCode=NW&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=NW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=NW ">NW</a>
+</td>
+<td class="infocell">NORTHWEST</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=NW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=NW Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=NW&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=NW Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=3506305224&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=3506305224 ">MERAZ, LAWRENCE Y</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=SB " href="maintenance.do?chartOfAccountsCode=SB&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=SB " href="maintenance.do?chartOfAccountsCode=SB&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SB&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=SB ">SB</a>
+</td>
+<td class="infocell">SOUTH BEND</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SB&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=SB Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SB&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=SB Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=5186102229&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=5186102229 ">FORTUNE, MITZI O</a>
+</td></tr>
+<tr class="even">
+<td class="infocell"><a title="edit Chart with Chart Code=SE " href="maintenance.do?chartOfAccountsCode=SE&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=SE " href="maintenance.do?chartOfAccountsCode=SE&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SE&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=SE ">SE</a>
+</td>
+<td class="infocell">SOUTHEAST</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SE&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=SE Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=SE&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=SE Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=4744906489&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=4744906489 ">HARTFIELD, JANA K</a>
+</td></tr>
+<tr class="odd">
+<td class="infocell"><a title="edit Chart with Chart Code=UA " href="maintenance.do?chartOfAccountsCode=UA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=edit"  >edit</a>&nbsp;&nbsp;<a title="copy Chart with Chart Code=UA " href="maintenance.do?chartOfAccountsCode=UA&businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&returnLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&methodToCall=copy"  >copy</a></td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=UA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;methodToCall=start" target='_blank' title="show inquiry for Chart Chart Code=UA ">UA</a>
+</td>
+<td class="infocell">UNIV ADMIN</td>
+<td class="infocell">Yes</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=UA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=8000&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=UA Object Code=8000 ">8000</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?chartOfAccountsCode=UA&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.ObjectCodeCurrent&amp;financialObjectCode=9041&amp;methodToCall=start" target='_blank' title="show inquiry for Object Code Current Chart Code=UA Object Code=9041 ">9041</a>
+</td>
+<td class="infocell">
+<a href="inquiry.do?businessObjectClassName=org.kuali.rice.kim.impl.identity.PersonImpl&amp;principalId=1271304676&amp;methodToCall=start" target='_blank' title="show inquiry for Person Principal ID=1271304676 ">BRAZIL, WELDON B</a>
+</td></tr></tbody></table><br><div class="exportlinks">Export options: 
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;d-16544-e=1&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;chartOfAccountsCode=&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;6578706f7274=1&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription="><span class="export csv">CSV </span></a>| 
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;d-16544-e=2&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;chartOfAccountsCode=&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;6578706f7274=1&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription="><span class="export excel">spreadsheet </span></a>| 
+<a href="lookup.do?financialCashObjectCode=&amp;formKey=88888888&amp;businessObjectClassName=org.kuali.kfs.coa.businessobject.Chart&amp;headerBarEnabled=Yes&amp;referencesToRefresh=&amp;showMaintenanceLinks=Yes&amp;conversionFields=&amp;tabStatesSize=7&amp;searchUsingOnlyPrimaryKeyValues=false&amp;reqSearchResultsActualSize=0&amp;lookupAnchor=&amp;multipleValues=No&amp;d-16544-e=3&amp;finAccountsPayableObjectCode=&amp;fieldNameToFocusOnAfterSubmit=&amp;actionEditablePropertiesGuid=a9807829-66f8-4b9c-9d4a-3f4ef12b0034&amp;chartOfAccountsCode=&amp;hasReturnableRow=No&amp;methodToCall.search.y=5&amp;methodToCall.search.x=48&amp;lookupableImplServiceName=securityLookupable&amp;methodToCall.search=search&amp;backLocation=http%3A%2F%2Freg.kfs.kuali.org%2Fkfs-reg%2Fportal.do&amp;docNum=&amp;methodToCall=viewResults&amp;suppressActions=No&amp;hideReturnLink=Yes&amp;actionUrlsExist=true&amp;6578706f7274=1&amp;searchResultKey=searchResults1&amp;readOnlyFields=&amp;active=Y&amp;finChartOfAccountDescription="><span class="export xml">XML </span> </a></div>
+		 </td>
+			<td width="1%"><img src="http://reg.kfs.kuali.org/kfs-reg/kr/static/images/pixel_clear.gif" alt="" width="20"
+				height="20"></td>
+		</tr>
+	</table>
+
+
+
+	
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+        <!-- lookup/inquiry footer -->
+    
+	
+
+
+
+					<!-- So that JS expandAllTab / collapseAllTab know the tabStates size. Subtract 1 because currentTabIndex = size + 1. -->
+					<input type="hidden" name="tabStatesSize" value="7">
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<input type="hidden" name="actionEditablePropertiesGuid" value="1c5b9a5a-cd8a-4b36-bda5-e4219fb46f6d">
+
+
+
+</form>
+<div id="formComplete"></div>
+</div>
+</body>
+
+</html>
+
